@@ -56,9 +56,6 @@ if [ "${CAVES}" == "true" ]; then
     if [ ! -f ${DATA_DIR}/.klei/DoNotStarveTogether/Cluster_1/Caves/server.ini ]; then
         echo "---No Caves/server.ini found---"
         files_on=1
-    elif [ ! -f ${DATA_DIR}/.klei/DoNotStarveTogether/Cluster_1/Caves/worldgenoverride.lua ]; then
-    echo "---No Caves/server.ini found, don't worry, we will create the worldgenoverride.lua with default options---"
-        echo -e "return {\n    override_enabled = true,\n    preset = \"DST_CAVE\",\n}" > ${DATA_DIR}/.klei/DoNotStarveTogether/Cluster_1/Caves/worldgenoverride.lua 
     fi
 fi
 
