@@ -15,8 +15,8 @@ ${STEAMCMD_DIR}/steamcmd.sh \
     
 echo "---Update server---"
 ${STEAMCMD_DIR}/steamcmd.sh \
-    +login anonymous \
     +force_install_dir $SERVER_DIR \
+    +login anonymous \
     +app_update $GAME_ID \
     +quit
 
