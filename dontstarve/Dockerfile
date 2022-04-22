@@ -32,8 +32,8 @@ RUN mkdir $DATA_DIR && \
 	mkdir $SERVER_DIR && \
 	mkdir $DATA_DIR/.klei && \
 	mkdir $DATA_DIR/.klei/DoNotStarveTogether && \
-	useradd -d $DATA_DIR -s /bin/bash steam && \
-	chown -R steam $DATA_DIR && \
+	useradd -d $DATA_DIR -s /bin/bash ${USER} && \
+	chown -R ${USER} $DATA_DIR && \
 	ulimit -n 2048
 
 ADD /scripts/ /opt/scripts/
