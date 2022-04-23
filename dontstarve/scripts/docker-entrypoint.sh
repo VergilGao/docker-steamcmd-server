@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source /opt/scripts/env.sh
+
 echo "---Setup Timezone to ${TZ}---"
 echo "${TZ}" > /etc/timezone
 echo "---Checking if UID: ${UID} matches user---"
@@ -24,7 +26,7 @@ term_handler() {
 
 trap 'kill ${!}; term_handler' SIGTERM
 
-su ${USER} -c "/opt/scripts/start-server.sh" &
+gosu ${USER} "/opt/scripts/start-server.sh" &
 killpid="$!"
 while true
 do
