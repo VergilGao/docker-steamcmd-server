@@ -27,8 +27,10 @@ echo "---Prepare Server---"
 file_check=0
 
 if [ ! -d "${CLUSTER_PATH}" ]; then
-    mkdir "${CLUSTER_PATH}" && cd "${CLUSTER_PATH}"
+    mkdir "${CLUSTER_PATH}"
 fi
+
+cd "${CLUSTER_PATH}"
 
 if [ ! -f "${CLUSTER_PATH}/cluster_token.txt" ]; then
     echo "---No cluster_token.txt found--"
@@ -71,6 +73,8 @@ if [ "$file_check" != 0 ]; then
 fi
 
 chmod -R ${DATA_PERM} ${DATA_DIR}
+cd ${SERVER_DIR}/bin
+
 echo "---Server ready---"
     
 if [ "${CAVES}" == "true" ]; then
