@@ -65,7 +65,8 @@ if [ "${CAVES}" == "true" ]; then
 fi
 
 if [ "$file_check" != 0 ]; then
-    echo "--- Error ---\nconfig files missing! you can download basic server config files from https://accounts.klei.com/account/game/servers?game=DontStarveTogether\nwe can do nothing here, putting server into sleep mode...\n-------------"
+    echo "[ERROR] config files missing! you can download basic server config files from https://accounts.klei.com/account/game/servers?game=DontStarveTogether"
+    echo "we can do nothing here, putting server into sleep mode..."
     sleep infinity
 fi
 
