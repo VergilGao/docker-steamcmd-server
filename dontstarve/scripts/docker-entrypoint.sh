@@ -19,7 +19,7 @@ chown -R ${UID}:${GID} ${DATA_DIR}
 
 echo "---Starting...---"
 term_handler() {
-	kill -SIGTERM $(pidof dontstarve_dedicated_server_nullrenderer)
+	kill -SIGTERM $(pidof dontstarve_dedicated_server_nullrenderer_x64)
 	wait "$killpid" -f 2>/dev/null
 	exit 143;
 }
