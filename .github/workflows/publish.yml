@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        games: [ dontstarve ]
+        games: [ dontstarve, satisfactory ]
 
     permissions:
       packages: write
