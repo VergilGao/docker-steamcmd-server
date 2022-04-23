@@ -3,12 +3,11 @@ FROM ghcr.io/vergilgao/debian-baseimage
 LABEL maintainer="VergilGao"
 LABEL org.opencontainers.image.source="https://github.com/VergilGao/docker-steamcmd-server"
 
-RUN dpkg --add-architecture i386 && \
-	apt-get update && \
+RUN apt-get update && \
 	apt-get -y install --no-install-recommends \
 		lib32gcc-s1 \
 		lib32stdc++6 \
-		libcurl4-gnutls-dev:i386 \
+		libcurl4-gnutls-dev \
 		screen && \
 	rm -rf /var/lib/apt/lists/*
 
