@@ -48,6 +48,16 @@ if [ ! -f "${CLUSTER_PATH}/adminlist.txt" ]; then
     echo "" > adminlist.txt
 fi
 
+if [ ! -f "${CLUSTER_PATH}/whitelist.txt" ]; then
+    echo "---No whitelist.txt found, don't worry, we will create an empty whitelist.txt for you---"
+    echo "" > whitelist.txt
+fi
+
+if [ ! -f "${CLUSTER_PATH}/blocklist.txt" ]; then
+    echo "---No blocklist.txt found, don't worry, we will create an empty blocklist.txt for you---"
+    echo "" > blocklist.txt
+fi
+
 if [ ! -f "${CLUSTER_PATH}/Master/server.ini" ]; then
     if [ ! -d "${CLUSTER_PATH}/Master" ]; then
         mkdir "${CLUSTER_PATH}/Master"
