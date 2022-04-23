@@ -77,8 +77,8 @@ if [ "${CAVES}" == "true" ]; then
     find "${SERVER_DIR}" -name "masterLog.*" -exec rm -f {} \;
     find "${SERVER_DIR}" -name "cavesLog.*" -exec rm -f {} \;
     echo "---Start Server---"
-    screen -S Master -L -Logfile "${SERVER_DIR}/masterLog.0" -d -m "${SERVER_DIR}/bin/dontstarve_dedicated_server_nullrenderer" -shard Master
-    screen -S Caves -L -Logfile "${SERVER_DIR}/cavesLog.0" -d -m "${SERVER_DIR}/bin/dontstarve_dedicated_server_nullrenderer" -shard Caves
+    screen -S Master -L -Logfile "${SERVER_DIR}/masterLog.0" -d -m "${SERVER_DIR}/bin/dontstarve_dedicated_server_nullrenderer" -cluster "${CLUSTER_NAME}" -shard Master
+    screen -S Caves -L -Logfile "${SERVER_DIR}/cavesLog.0" -d -m "${SERVER_DIR}/bin/dontstarve_dedicated_server_nullrenderer" -cluster "${CLUSTER_NAME}" -shard Caves
     sleep 2
     screen -S watchdog -d -m /opt/scripts/start-watchdog.sh
     tail -f "${SERVER_DIR}/masterLog.0" "${SERVER_DIR}/cavesLog.0"
@@ -86,5 +86,5 @@ else
     find "${SERVER_DIR}" -name "masterLog.*" -exec rm -f {} \;
     find "${SERVER_DIR}" -name "cavesLog.*" -exec rm -f {} \;
     echo "---Start Server---"
-    "${SERVER_DIR}/bin/dontstarve_dedicated_server_nullrenderer" -shard Master
+    "${SERVER_DIR}/bin/dontstarve_dedicated_server_nullrenderer" -cluster "${CLUSTER_NAME}" -shard Master
 fi
